@@ -1,0 +1,234 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "remind er",
+      "intents": [
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.FallbackIntent",
+          "samples": []
+        },
+        {
+          "name": "GetAllCurrentRemindersIntent",
+          "slots": [],
+          "samples": [
+            "do I have to do something",
+            "is there any reminders",
+            "what reminders do I have",
+            "is there reminders",
+            "tell me my current reminders",
+            "tell me my reminders",
+            "what are my reminders",
+            "what are my current reminders",
+            "what should I do",
+            "is there something to do",
+            "is there something I have to do",
+            "are there any messages",
+            "are there any reminders",
+            "do I have any messages",
+            "do I need to do something",
+            "do I have any reminders",
+            "get current reminders",
+            "get reminders"
+          ]
+        },
+        {
+          "name": "JoinParentIntent",
+          "slots": [
+            {
+              "name": "code",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "it's {code}",
+                "it is {code}",
+                "code {code}",
+                "the code is {code}",
+                "{code}"
+              ]
+            }
+          ],
+          "samples": [
+            "join user {code}",
+            "join user with code {code}",
+            "join the user with the code {code}",
+            "join user with the code {code}",
+            "join user",
+            "join parent {code}",
+            "join parent with code {code}",
+            "join the parent with the code {code}",
+            "join the parent with the code {code}",
+            "join parent"
+          ]
+        },
+        {
+          "name": "JoinClassIntent",
+          "slots": [
+            {
+              "name": "code",
+              "type": "AMAZON.NUMBER",
+              "samples": [
+                "the code is {code}",
+                "it's {code}",
+                "it is {code}",
+                "{code}"
+              ]
+            }
+          ],
+          "samples": [
+            "join class",
+            "join a class",
+            "join teacher with the code {code}",
+            "join class with the code {code}",
+            "join teacher {code}",
+            "join class {code}"
+          ]
+        }
+      ],
+      "types": []
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "JoinParentIntent",
+          "delegationStrategy": "ALWAYS",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.1386403931201"
+          },
+          "slots": [
+            {
+              "name": "code",
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.227601848305.1485793837497"
+              }
+            }
+          ]
+        },
+        {
+          "name": "JoinClassIntent",
+          "confirmationRequired": true,
+          "prompts": {
+            "confirmation": "Confirm.Intent.1249953968010"
+          },
+          "slots": [
+            {
+              "name": "code",
+              "type": "AMAZON.NUMBER",
+              "confirmationRequired": false,
+              "elicitationRequired": true,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1249953968010.676427101841"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "ALWAYS"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.916314611062.347502699819",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is the code of the parent or teacher you want to join?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.227601848305.1485793837497",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "What is the code?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.227601848305.1485793837497",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "To confirm, you would like to join a group with the code {code} "
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.1386403931201.614746893749",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "To confirm, you want to join the parent with the code {code}"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1249953968010",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "To confirm, you want to join the class with the code {code} "
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1249953968010.676427101841",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what is the code?"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Slot.1249953968010.676427101841",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "To confirm, you want to join the class with the code {code}"
+          }
+        ]
+      },
+      {
+        "id": "Confirm.Intent.1386403931201",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "To confirm, you want to join the parent with the code {code}"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1631682594940.134963612030",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "tell me your name"
+          },
+          {
+            "type": "PlainText",
+            "value": "what is your name?"
+          }
+        ]
+      }
+    ]
+  }
+}
